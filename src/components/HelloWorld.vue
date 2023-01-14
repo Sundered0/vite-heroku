@@ -6,15 +6,9 @@ defineProps<{ msg: string }>();
 const count = ref(0);
 
 function getImportEnvVar(key: string) {
-  // if (import.meta.env[key] === undefined) {
-  //   throw new Error(`Env variable ${key} is not found`);
-  // }
   return import.meta.env[key] || "NULL";
 }
 function getProcessEnvVar(key: string) {
-  // if (import.meta.env[key] === undefined) {
-  //   throw new Error(`Env variable ${key} is not found`);
-  // }
   return process.env[key] || "NULL";
 }
 
