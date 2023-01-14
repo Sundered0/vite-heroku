@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import process from "process";
 
 defineProps<{ msg: string }>();
 
