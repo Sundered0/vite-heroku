@@ -5,14 +5,21 @@ defineProps<{ msg: string }>();
 
 const count = ref(0);
 
-function getEnvVar(key: string) {
+function getImportEnvVar(key: string) {
   // if (import.meta.env[key] === undefined) {
   //   throw new Error(`Env variable ${key} is not found`);
   // }
   return import.meta.env[key] || "NULL";
 }
+function getProcessEnvVar(key: string) {
+  // if (import.meta.env[key] === undefined) {
+  //   throw new Error(`Env variable ${key} is not found`);
+  // }
+  return process.env[key] || "NULL";
+}
 
-const customEnv = getEnvVar("VITE_APP_CUSTOM_ENV");
+const importEnv = getImportEnvVar("VITE_APP_IMPORT_ENV");
+const processEnv = getProcessEnvVar("VITE_APP_PROCESS_ENV");
 </script>
 
 <template>
@@ -24,7 +31,8 @@ const customEnv = getEnvVar("VITE_APP_CUSTOM_ENV");
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
-    {{ customEnv }}
+    <p>import env: {{ importEnv }}</p>
+    <p>process env: {{ processEnv }}</p>
   </div>
 
   <p>
