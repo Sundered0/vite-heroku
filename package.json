@@ -1,0 +1,21 @@
+{
+  "name": "vite-heroku",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env VITE_APP_CUSTOM_ENV=\"hello world!\" vite",
+    "build": "vue-tsc && cross-env VITE_APP_CUSTOM_ENV=\"build app\" vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vue-tsc": "^1.0.11"
+  }
+}
