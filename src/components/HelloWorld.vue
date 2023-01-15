@@ -8,12 +8,8 @@ const count = ref(0);
 function getImportEnvVar(key: string) {
   return import.meta.env[key] || "NULL";
 }
-function getProcessEnvVar(key: string) {
-  return process.env[key] || "NULL";
-}
 
 const importEnv = getImportEnvVar("VITE_APP_IMPORT_ENV");
-const processEnv = getProcessEnvVar("VITE_APP_PROCESS_ENV");
 </script>
 
 <template>
@@ -21,12 +17,8 @@ const processEnv = getProcessEnvVar("VITE_APP_PROCESS_ENV");
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-    <p>import env: {{ importEnv }}</p>
-    <p>process env: {{ processEnv }}</p>
+
+    <p>IMPORT ENV: {{ importEnv }}</p>
   </div>
 
   <p>

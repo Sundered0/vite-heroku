@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "cross-env VITE_APP_CUSTOM_ENV=\"hello world!\" vite",
-    "build:local": "vue-tsc && cross-env VITE_APP_CUSTOM_ENV=\"build app\" vite build",
+    "dev": "vite",
+    "build:local": "vite build",
+    "build:bound": "cross-env VITE_APP_IMPORT_ENV=\"BOUND BUILT VALUE\" vite build",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
